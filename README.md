@@ -5,6 +5,8 @@ Continuous Assurance Starter Template
 
 This is a continuous assurance compliance report starter kit platform, built with Python and Flask with Dash.
 
+![Main page](img/main.png)
+
 ## Quick start
 
 * Generate some dummy metrics
