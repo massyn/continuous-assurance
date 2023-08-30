@@ -33,6 +33,7 @@ def pivot(X):
 def pipeline(I,O):
     print('Pipeline...')
     latest = {}
+    detail = {}
     with open(f"{O}/rollup.csv",'wt') as CSV:
         CSV.write('datestamp,metric,mapping,compliance\n')
 
@@ -66,8 +67,22 @@ def pipeline(I,O):
                         latest[metric] = datestamp
                         for j in data:
                             j['datestamp'] = datestamp
-                        with open(f"{O}/{metric}.json",'wt') as r:
-                            r.write(json.dumps(data,indent=2))
+                            j['metric'] = metric
+                        
+                        detail[metric] = data
+
+                        D = []
+                        for M in detail:
+                            for i in detail[M]:
+                                D.append(i)
+                        F = [ 'metric','datestamp','resource' , 'mapping','compliance','detail' ]
+                        with open(f"{O}/detail.csv",'wt') as r:
+                            r.write(','.join(F) + '\n')
+                            for i in D:
+                                V = []
+                                for j in F:
+                                    V.append(str(i[j]))
+                                r.write(','.join(V)+'\n')
             else:
                 print('invalid file format')
 
