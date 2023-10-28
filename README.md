@@ -17,6 +17,7 @@ Do it all by simply running:
 ```
 $ git clone https://github.com/massyn/continuous-assurance
 $ cd continuous-assurance
+$ pip install -r requirements.txt
 $ sh run.sh
 ```
 
