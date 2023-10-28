@@ -13,4 +13,11 @@ This is a continuous assurance compliance report starter kit platform, built wit
 * Run it through a "pipeline"
 * Render it on a reporting engine
 
-Do it all by simply running `run.sh`
+Do it all by simply running:
+```
+$ git clone https://github.com/massyn/continuous-assurance
+$ cd continuous-assurance
+$ sh run.sh
+```
+
+Open your web browser to [http://localhost:8050](http://localhost:8050)
